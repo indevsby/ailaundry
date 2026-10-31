@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ai Laundry – Bersih, Wangi, Rapi</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f1f9ff;--ink:#0b2a44;--mute:#5b7690;--blue:#4fb3f6;--blue2:#1e88e5;--line:#d9ecfa;--card:#fff;--btn-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1a29;--bg2:#0e2237;--ink:#eaf5ff;--mute:#9db7cc;--line:#1b3a57;--card:#10273d}}
+:root[data-theme="dark"]{--bg:#0a1a29;--bg2:#0e2237;--ink:#eaf5ff;--mute:#9db7cc;--line:#1b3a57;--card:#10273d}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
+.brand svg{width:40px;height:40px}
+.brand span b{color:var(--blue2)}
+nav a{color:var(--mute);text-decoration:none;margin-left:20px;font-weight:600;font-size:14px}
+nav a:hover{color:var(--blue2)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:var(--btn-ink);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px -8px rgba(30,136,229,.55);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--blue2);border:2px solid var(--blue);box-shadow:none}
+.hero{background:radial-gradient(900px 400px at 85% -10%,#cfeaff55,transparent),var(--bg2);padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.tag{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--blue2);font-weight:700;font-size:13px;padding:6px 14px;border-radius:999px}
+h1{font-size:clamp(34px,5.4vw,56px);line-height:1.1;margin:16px 0;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mute);font-size:18px;max-width:480px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-art{display:flex;justify-content:center}
+.hero-art svg{width:min(340px,80%);height:auto;filter:drop-shadow(0 24px 40px rgba(30,136,229,.25));animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-12px)}}
+section{padding:68px 0}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 8px;text-align:center}
+.sub{text-align:center;color:var(--mute);margin:0 auto 36px;max-width:520px}
+.promo{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:24px;padding:34px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.promo h3{margin:0 0 4px;font-size:26px}
+.promo p{margin:0;opacity:.95}
+.big{font-size:64px;font-weight:800;line-height:1}
+.promo .btn{background:#fff;color:var(--blue2);box-shadow:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative}
+.card.hot{border:2px solid var(--blue);box-shadow:0 18px 40px -18px rgba(30,136,229,.45)}
+.card .ic{font-size:34px}
+.card h3{margin:8px 0 4px}
+.price{font-size:32px;font-weight:800;color:var(--blue2)}
+.price small{font-size:14px;color:var(--mute);font-weight:600}
+.card p{color:var(--mute);margin:8px 0 0;font-size:15px}
+.badge{position:absolute;top:-12px;right:20px;background:var(--blue2);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px}
+.alt{background:var(--bg2)}
+.info{display:grid;grid-template-columns:1fr 1.3fr;gap:28px;align-items:stretch}
+.info ul{list-style:none;padding:0;margin:0 0 20px}
+.info li{display:flex;gap:12px;margin-bottom:16px}
+.info li b{display:block}
+.info li span.i{font-size:22px}
+.map{border:1px solid var(--line);border-radius:22px;overflow:hidden;min-height:320px;background:var(--card)}
+.map iframe{width:100%;height:100%;min-height:320px;border:0;display:block}
+#st{font-weight:700}
+footer{padding:28px 0 36px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.25);text-decoration:none;font-size:28px}
+@media(max-width:760px){.hero .wrap,.info{grid-template-columns:1fr}.hero-art{order:-1}nav{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="Ai Laundry">
+<svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fd3ff"/><stop offset="1" stop-color="#1e88e5"/></linearGradient></defs>
+<path d="M32 4C32 4 10 27 10 41a22 22 0 0 0 44 0C54 27 32 4 32 4Z" fill="url(#g1)"/>
+<path d="M18 40c4-3 8-3 12 0s8 3 16 0v4c-8 4-12 4-16 1s-8-3-12 0Z" fill="#fff" opacity=".35"/>
+<text x="32" y="47" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#fff">Ai</text>
+<circle cx="47" cy="17" r="4" fill="#cfeaff"/><circle cx="53" cy="27" r="2.4" fill="#8fd3ff"/>
+<path d="M15 14l1.6 3.4L20 19l-3.4 1.6L15 24l-1.6-3.4L10 19l3.4-1.6Z" fill="#4fb3f6"/></svg>
+<span>Ai <b>Laundry</b></span></a>
+<nav><a href="#promo">Promo</a><a href="#paket">Paket</a><a href="#lokasi">Lokasi</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="tag">✨ Buka setiap hari 07.00 – 21.00</span>
+<h1>Pakaian <em>bersih, wangi</em> &amp; rapi tanpa repot.</h1>
+<p>Serahkan cucian Anda kepada Ai Laundry. Cepat, higienis, dan harga bersahabat di Sidoarjo.</p>
+<div class="cta">
+<a class="btn" href="https://wa.me/628882223636?text=Halo%20Ai%20Laundry%2C%20saya%20ingin%20bertanya%20tentang%20layanan%20laundry." target="_blank" rel="noopener">💬 Chat WhatsApp CS</a>
+<a class="btn ghost" href="#paket">Lihat Paket</a>
+</div></div>
+<div class="hero-art"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#big"/></svg></div>
+</div></div>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset="1" stop-color="#1e88e5"/></linearGradient>
+<symbol id="big" viewBox="0 0 64 64"><path d="M32 4C32 4 10 27 10 41a22 22 0 0 0 44 0C54 27 32 4 32 4Z" fill="url(#g2)"/>
+<path d="M16 40c5-4 9-4 14 0s9 4 18 0v5c-9 5-13 5-18 1s-9-4-14 0Z" fill="#fff" opacity=".35"/>
+<text x="32" y="47" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#fff">Ai</text>
+<circle cx="47" cy="17" r="4" fill="#e3f4ff"/><circle cx="53" cy="27" r="2.4" fill="#8fd3ff"/><circle cx="12" cy="24" r="2" fill="#8fd3ff"/>
+<path d="M15 14l1.6 3.4L20 19l-3.4 1.6L15 24l-1.6-3.4L10 19l3.4-1.6Z" fill="#4fb3f6"/></symbol></defs></svg>
+
+<section id="promo"><div class="wrap">
+<div class="promo">
+<div><h3>🎉 Promo Bulan November</h3><p>Diskon spesial setiap hari pada jam 10.00 – 13.00</p></div>
+<div class="big">20%</div>
+<a class="btn" href="https://wa.me/628882223636?text=Halo%20Ai%20Laundry%2C%20saya%20ingin%20klaim%20promo%20diskon%2020%25%20November." target="_blank" rel="noopener">Klaim Promo</a>
+</div></div></section>
+
+<section id="paket" class="alt"><div class="wrap">
+<h2>Paket Laundry</h2><p class="sub">Pilih layanan yang paling sesuai dengan kebutuhan Anda.</p>
+<div class="grid">
+<div class="card"><div class="ic">👕</div><h3>Laundry Kering</h3><div class="price">Rp6.000 <small>/ kg</small></div><p>Dicuci dan dikeringkan, siap Anda setrika sendiri.</p></div>
+<div class="card hot"><span class="badge">Terlaris</span><div class="ic">🧺</div><h3>Full Service</h3><div class="price">Rp10.000 <small>/ kg</small></div><p>Cuci, kering, setrika, dan lipat rapi. Tinggal pakai.</p></div>
+<div class="card"><div class="ic">🪙</div><h3>Laundry Koin</h3><div class="price">Rp5.000 <small>/ mesin</small></div><p>Cuci sendiri kapan saja. Maksimal 7 kg per mesin.</p></div>
+</div></div></section>
+
+<section id="lokasi"><div class="wrap">
+<h2>Kunjungi Kami</h2><p class="sub">Mampir langsung atau hubungi CS kami lewat WhatsApp.</p>
+<div class="info">
+<div>
+<ul>
+<li><span class="i">📍</span><div><b>Alamat</b>Jalan Raya Pecantingan No. 123, Cantingan, Sekardangan, Kec. Sidoarjo, Kab. Sidoarjo, Jawa Timur 61215</div></li>
+<li><span class="i">🕖</span><div><b>Jam Operasional</b>Setiap hari, 07.00 – 21.00 <span id="st"></span></div></li>
+<li><span class="i">📞</span><div><b>WhatsApp CS</b>0888-2223-636</div></li>
+</ul>
+<a class="btn" href="https://wa.me/628882223636?text=Halo%20Ai%20Laundry%2C%20saya%20ingin%20memesan%20layanan%20laundry." target="_blank" rel="noopener">💬 Pesan via WhatsApp</a>
+<a class="btn ghost" style="margin-top:12px" href="https://maps.app.goo.gl/2AQFajF7pBStrab17" target="_blank" rel="noopener">🗺️ Buka di Google Maps</a>
+</div>
+<div class="map"><iframe title="Lokasi Ai Laundry" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=-7.4682919,112.727777&amp;z=17&amp;output=embed"></iframe></div>
+</div></div></section>
+</main>
+
+<footer>© 2026 Ai Laundry · Bersih, Wangi, Rapi</footer>
+<a class="fab" href="https://wa.me/628882223636" target="_blank" rel="noopener" aria-label="Chat WhatsApp">💬</a>
+<script>
+(function(){var h=new Date().getHours(),o=h>=7&&h<21,e=document.getElementById('st');
+e.textContent=o?'· 🟢 Buka sekarang':'· 🔴 Sedang tutup';e.style.color=o?'#1aa260':'#d64545'})();
+</script>
+</body>
+</html>
